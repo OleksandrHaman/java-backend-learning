@@ -2,92 +2,85 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter day number");
-        int dayNumber = scanner.nextInt();
-        String dayName = switch (dayNumber) {
-            case 1 -> "Monday";
-            case 2 -> "Tuesday";
-            case 3 -> "Wednesday";
-            case 4 -> "Thursday";
-            case 5 -> "Friday";
-            case 6 -> "Saturday";
-            case 7 -> "Sanday";
-            default -> "invalid day";
-        };
-        System.out.println(dayName);
-
-
-        int countdown = 10;
-        while (countdown >= 1) {
-            System.out.println(countdown);
-            countdown--;
-        }
-        System.out.println("GO!");
-        for (int i = 0; i <= 5; i++) {
-            System.out.println(i);
-        }
-        for (int i = 0; i <= 10; i = i + 2) {
-            System.out.println(i);
-        }
-        for (int i = 20; i >= 0; i -= 3) {
-            System.out.println(i);
-        }
-        for (int i = 1; i <= 20; i++) {
-            if (i % 2 == 0) {
-                System.out.println(i);
-            }
-        }
-        for (int i = 1; i <= 10; i++) {
-            if (i % 3 == 0) {
-                System.out.println("Fizz");
-            } else {
-                System.out.println(i);
-            }
-        }
-        for (int i = 1; i <= 30; i++) {
-            if (i % 3 == 0 && i % 5 == 0) {
-                System.out.println("FizzBuzz");
-            } else if (i % 3 == 0) {
-                System.out.println("Fizz");
-            } else if (i % 5 == 0) {
-                System.out.println("Buzz");
-            } else {
-                System.out.println(i);
-            }
-        }
-        for (int i = 1; i <= 20; i++) {
-            if (i == 13) {
-                break;
-            }
-            System.out.println(i);
-        }
-        for (int i = 1; i <= 10; i++){
-            if (i % 3 == 0){
-                continue;
-            }
-            System.out.println(i);
-        }
-        System.out.println("Enter a number");
-        int day = scanner.nextInt();
-        if (day % 5 == 0){
-            System.out.println("Divisible by 5");
-        }
-        if( day % 2 == 0) {
+        String name = scanner.nextLine();
+        int age = scanner.nextInt();
+        printUserInfo(name,age);
+        printWelcome();
+        printGoodbye();
+        int result = calculateSquare(5);
+        System.out.println(result);
+        int number = 10;
+        if (isEven(number)){
             System.out.println("Even");
-        }else{
+        }else {
             System.out.println("Odd");
         }
-
-        for (int i = 1 ; i <= day; i++){
-            if (i >= 20) {
-                break;
-            }else if (i % 3 == 0){
-                continue;
-
-            }else {
-                System.out.println(i);
-            }
+        System.out.println(getGrande(80));
+        double price =  49.99;
+        int quantity = 3;
+        boolean hasDiscount = true;
+        double total = calculateTotal(price,quantity);
+        double finalPrice = discount(hasDiscount,total);
+        System.out.println("Price " + finalPrice);
+        if (isExpensive(finalPrice)){
+            System.out.println("Expensive order");
+        }else {
+            System.out.println("Normal price");
         }
+    }
 
+
+    public static double calculateTotal(double price, int quantity){
+        return price * quantity;
     }
+    public static double discount( boolean hasDiscount, double total){
+        if (hasDiscount){
+            return total * 0.9;
+        } else {
+            return total;
+        }
     }
+
+    public static boolean isExpensive(double total){
+            return total >= 100;
+    }
+
+    public static String getGrande(int score){
+        if (score >= 90){
+            return "Excellent";
+        }else if (score >= 75){
+            return "Good";
+        }else if (score >= 60){
+            return "Pass";
+        }else {
+            return "Fail";
+        }
+    }
+
+    public static boolean isEven(int number){
+        return number % 2 == 0;
+    }
+
+    public static  int calculateSquare (int number){
+        return number * number;
+    }
+
+    public static void printUserInfo(String name, int age){
+        System.out.println(name + age);
+        if (age >= 18){
+            System.out.println("Adult");
+        }else {
+            System.out.println("Minor");
+        }
+    }
+
+    public static void printWelcome(){
+        System.out.println("Welcome to Java!");
+    }
+    public static void printGoodbye(){
+        System.out.println("Goodbye!");
+    }
+
+
+
+}
