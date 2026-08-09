@@ -67,6 +67,27 @@ public class Main {
             }
             System.out.println(i);
         }
+        System.out.println("Enter a number");
+        int day = scanner.nextInt();
+        if (day % 5 == 0){
+            System.out.println("Divisible by 5");
+        }
+        if( day % 2 == 0) {
+            System.out.println("Even");
+        }else{
+            System.out.println("Odd");
+        }
+
+        for (int i = 1 ; i <= day; i++){
+            if (i >= 20) {
+                break;
+            }else if (i % 3 == 0){
+                continue;
+
+            }else {
+                System.out.println(i);
+            }
+        }
 
     }
     }
