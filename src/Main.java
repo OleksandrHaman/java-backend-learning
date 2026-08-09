@@ -2,82 +2,71 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Привіт, Світ!");
-        System.out.println("Мне звати Олександр");
-        System.out.println("Це перший день в Java");
-        int ageFirst = 21;
-        System.out.println(ageFirst);
-        int salary = 243;
-        System.out.println(salary);
-        String nameFirst = "Oleksandr";
-        System.out.println(nameFirst);
-        String city = "Wroclaw";
-        System.out.println(city);
-        String ageText = "21";
-        int ageNumber = 21;
-        System.out.println(ageText + 5);
-        System.out.println(ageNumber + 5);
-        System.out.println("Мене звати " + nameFirst);
-        System.out.println("Я живу в " + city);
-        System.out.println("Мені " + ageFirst + " років");
-        double height = 27.5;
-        boolean isStudent = true;
-        char firstLetter = 'w';
-        System.out.println(height);
-        System.out.println(isStudent);
-        System.out.println(firstLetter);
-        int a = 21;
-        int b = 12;
-        System.out.println(a + b);
-        System.out.println(a - b);
-        System.out.println(a * b);
-        System.out.println(a / b);
-        System.out.println(a % b);
-        int money = 200;
-        if (money >= 300){
-            System.out.println("Можу купити");
-        } else {
-            System.out.println("Не вистачає коштів");
+        System.out.println("Enter day number");
+        int dayNumber = scanner.nextInt();
+        String dayName = switch (dayNumber) {
+            case 1 -> "Monday";
+            case 2 -> "Tuesday";
+            case 3 -> "Wednesday";
+            case 4 -> "Thursday";
+            case 5 -> "Friday";
+            case 6 -> "Saturday";
+            case 7 -> "Sanday";
+            default -> "invalid day";
+        };
+        System.out.println(dayName);
+
+
+        int countdown = 10;
+        while (countdown >= 1) {
+            System.out.println(countdown);
+            countdown--;
         }
-        int score = 90;
-        if (score >= 100){
-            System.out.println("Дуже добре");
-        } else if (score >= 75) {
-            System.out.println("Добре");
-        } else{
-            System.out.println("Потрібно більше практики");
+        System.out.println("GO!");
+        for (int i = 0; i <= 5; i++) {
+            System.out.println(i);
         }
-        System.out.println(5 == 0);
-        System.out.println( 5 != 0);
-        System.out.println( 5 > 0);
-        System.out.println(5 < 0);
-        boolean hasTicket = true;
-        System.out.println(ageFirst >= 18 && hasTicket);
-        System.out.println(ageFirst >= 18 || hasTicket);
-        System.out.println(ageFirst < 18 && hasTicket);
-        System.out.println(ageFirst < 18 || hasTicket);
-        System.out.println(!hasTicket);
-        boolean hasMembership = true;
-        boolean hasTowel = false;
-        boolean isTrainer = false;
-        if ((ageFirst >= 18) && hasMembership || isTrainer){
-            System.out.println("Вхід дозволено");
-        }else {
-            System.out.println("Вхід заборонено");
+        for (int i = 0; i <= 10; i = i + 2) {
+            System.out.println(i);
         }
-        if (!hasTowel){
-            System.out.println("Не забудьте взяти рушник");
+        for (int i = 20; i >= 0; i -= 3) {
+            System.out.println(i);
         }
-        System.out.println("Як тебе звати?");
-        String name = scanner.nextLine();
-        System.out.println("Скільки тобі років?");
-        int age = scanner.nextInt();
-        System.out.println("Привіт " + name);
-        System.out.println("Тобі " + age +  " років");
-        if (age >= 18){
-            System.out.println("Ти повнолітній");
-        }else {
-            System.out.println("Ти неповнолітній");
+        for (int i = 1; i <= 20; i++) {
+            if (i % 2 == 0) {
+                System.out.println(i);
+            }
         }
+        for (int i = 1; i <= 10; i++) {
+            if (i % 3 == 0) {
+                System.out.println("Fizz");
+            } else {
+                System.out.println(i);
+            }
+        }
+        for (int i = 1; i <= 30; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                System.out.println("FizzBuzz");
+            } else if (i % 3 == 0) {
+                System.out.println("Fizz");
+            } else if (i % 5 == 0) {
+                System.out.println("Buzz");
+            } else {
+                System.out.println(i);
+            }
+        }
+        for (int i = 1; i <= 20; i++) {
+            if (i == 13) {
+                break;
+            }
+            System.out.println(i);
+        }
+        for (int i = 1; i <= 10; i++){
+            if (i % 3 == 0){
+                continue;
+            }
+            System.out.println(i);
+        }
+
     }
-}
+    }
