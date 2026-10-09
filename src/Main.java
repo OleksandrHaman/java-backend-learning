@@ -1,33 +1,35 @@
 public class Main {
     public static void main(String[] args) {
-        BankAccount bankAccount = new BankAccount(1456);
-        System.out.println(bankAccount.getBalance());
-        bankAccount.deposit(500);
-        System.out.println(bankAccount.getBalance());
-        bankAccount.withdraw(300);
-        System.out.println(bankAccount.getBalance());
-        bankAccount.withdraw(5000);
-        System.out.println(bankAccount.getBalance());
+    Employee[] employees = {
+            new Employee(),
+            new Manager(),
+            new Cleaner(),
+    };
+
+    for (Employee employee : employees){
+        employee.work();
+    }
+
     }
 }
 
-class BankAccount{
-    private double balance;
-    BankAccount(double balance){
-        this.balance = balance;
-    }
-    double getBalance(){
-        return balance;
-    }
-    void deposit(double amount){
-        if (amount > 0){
-            this.balance += amount;
-        }
-    }
-    void withdraw(double amount){
-        if (amount > 0 && amount <= balance){
-            this.balance -= amount;
-        }
+class Employee{
+    void work(){
+        System.out.println("Preparing orders");
     }
 }
 
+class Manager extends Employee{
+    @Override
+    void work(){
+        System.out.println("Managing the shift");
+    }
+
+}
+
+class Cleaner extends Employee{
+    @Override
+    void work(){
+        System.out.println("Cleaning restaurant");
+    }
+}
