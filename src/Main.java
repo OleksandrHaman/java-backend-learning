@@ -1,35 +1,36 @@
+import org.w3c.dom.ls.LSOutput;
+
 public class Main {
     public static void main(String[] args) {
-    Employee[] employees = {
-            new Employee(),
-            new Manager(),
-            new Cleaner(),
-    };
-
-    for (Employee employee : employees){
-        employee.work();
-    }
-
+        Figure[] figure = {
+                new Square(),
+                new Line()
+        };
+        for (Figure figure1: figure){
+            figure1.rotate();
+        }
     }
 }
 
-class Employee{
-    void work(){
-        System.out.println("Preparing orders");
+
+abstract class Figure{
+    public void moveLeft(){
+        System.out.println("Moving left");
     }
+    public abstract void rotate();
 }
 
-class Manager extends Employee{
+class Square extends Figure{
     @Override
-    void work(){
-        System.out.println("Managing the shift");
+    public void rotate(){
+        System.out.println("Square does not change");
     }
-
 }
 
-class Cleaner extends Employee{
+class Line extends Figure{
     @Override
-    void work(){
-        System.out.println("Cleaning restaurant");
+    public void rotate(){
+        System.out.println("Line rotated");
     }
 }
+
