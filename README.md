@@ -54,4 +54,4 @@ java -cp out learning.oop.AbstractFigureDemo
 
 ## Roadmap
 
-Basics ✅ → Methods ✅ → Arrays ✅ → OOP (in progress; next: **interfaces**) → Collections + Exceptions → Maven + JUnit → SQL/PostgreSQL → HTTP/REST → Spring Boot → Docker/Linux.
+Basics ✅ → Methods ✅ → Arrays ✅ → OOP (in progress; next: **interfaces**) ✅ → Collections + Exceptions → Maven + JUnit → SQL/PostgreSQL → HTTP/REST → Spring Boot → Docker/Linux.
